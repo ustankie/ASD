@@ -1,0 +1,22 @@
+ios_based::sync_with_stdio(0); #io sie nie buforuje
+cin.tie(0);
+cout.tie(0);
+1) naiwne O(n+w*d+r)
+4)liczenie tylko dla r O(n+w+r*w)
+8)listy z sortowaniem lub bez -> O(w^2+rlogr) lub O(w^2+w*r)
+3)województwa O(sqrt(n)+sqrt(n)+sqrt(n))=O(sqrtn)
+  O(w*sqrtn+r)
+2)tworzymy tablice l x r O(w+r*n^2)
+Drzewo binarne -> województwa -> trzeba znaleźć największą potęgę 2 > n (p)-> mamy 2^p liści:
+    left[i]=2*i
+    right[i]=2*i+1
+  Zapisujemy idąc od dołu w jak największym przedziale inf o dodaniu danej kwoty: 
+  sprawdzamy skrajne węzły na danym poziomie (na skraju idziemy do góry, kiedy oba pointery się spotkają, przerywamy)
+  while l i r nie maja wspolnego parenta
+    if l-lewe dziecko: dodaj
+    if r-lewe dziecko: dodaj
+    skaczemy do bardziej wewnetrznych rodziców, jeśli bierzemy
+    r=par[r]
+    l=par[l]
+    prawym pointerem idziemy po fikcyjnym drzewie?
+  O(n+w*logn+rlogn)
