@@ -35,6 +35,9 @@ def sum_stains(T):
     
 
 def plan(T):
+    #print(*T,sep="\n")
+    # if len(T[0])==5000:
+    #     print(*T,sep="\n")
     S=sum_stains(T)
     m=len(T[0])
     B=[0 for _ in range(m)]
@@ -43,15 +46,16 @@ def plan(T):
     B[0]=S[0]
     F[0]=1
     S[0]=0
+    print(B[0])
 
     for i in range(1,m):
-        if B[i-1]-1>=0:
+        if B[i-1]-1>0:
             B[i]=B[i-1]-1
             F[i]=F[i-1]
-        else:
+        elif (B[i-1]-1<=0 and i!=(m-1)):
             max_stain=0
             max_ind=1
-            for j in range(1,i):
+            for j in range(i+1):
                 if S[j]>max_stain:
                     max_ind=j
                     max_stain=S[j]
@@ -59,11 +63,13 @@ def plan(T):
             S[max_ind]=0
             F[i]=F[i-1]+1
 
+
+        else:
+            F[i]=F[i-1]
     return F[m-1]
 
 
 
 # zmien all_tests na True zeby uruchomic wszystkie testy
 runtests( plan, all_tests = True )
-
 
