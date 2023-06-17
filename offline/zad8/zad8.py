@@ -55,7 +55,7 @@ def plan(T):
         elif (B[i-1]-1<=0 and i!=(m-1)):
             max_stain=0
             max_ind=1
-            for j in range(i+1):
+            for j in range(1,i+1):
                 if S[j]>max_stain:
                     max_ind=j
                     max_stain=S[j]

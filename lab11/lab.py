@@ -4,7 +4,7 @@
 #   F(i,j,l)=max(min(f(m,j,l-1),suma od A[i] do A[m] po m od i+1 do j) #F(i,j,l)=max(min(f(i,m,1),suma od A[i] do A[m] po m od i+1 do j)
 #   F(i,j,l)=-inf dla i>j
 #   rekurencja ze spamiętywaniem, słowniki
-#2) n domków, włamywacz włamuje się, każdy dom ma wartość c[i], nie może się włamać do dwóch domków pod rząd / drzewa
+#2)v n domków, włamywacz włamuje się, każdy dom ma wartość c[i], nie może się włamać do dwóch domków pod rząd / drzewa
 #   F[i][True] - maksymalny zysk z domów od 1 do i, pod warunkiem, że okradamy i-ty dom
 #   F[i][False] - maksymalny zysk z domów od 1 do i, pod warunkiem, że nie okradamy i-tego domu
 #   F[0,_]=0

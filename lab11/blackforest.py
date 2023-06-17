@@ -9,10 +9,18 @@ def blackf(C):
     return max(F[n-1]),solution(F,C)
 def solution(F,C):
     A=[]
-    if F[n-1][0]<F[n-1][1]:
-        A.append(n-1)
+    n=len(C)
     def recur(i):
-        if F[i][0]
+        if i<0:
+            return
+        if F[i][0]<F[i][1]:
+            A.append(i)
+            recur(i-2)
+        else:
+            recur(i-1)
+    recur(n-1)
+    return A
+
     
 
 
@@ -20,4 +28,6 @@ def solution(F,C):
 T = [1, 8, 3, 4, 5, 1, 2]
 T = [1, 8, 3, 4, 5, 2, 0, 0, 0, 0]
 T = [1, 0, 8, 0, 3, 0, 4, 0, 5, 0, 2]
+T = [8, 12, 3, 4, 7, 1, 2, 10]
+T = [8, 1, 3, 4, 5, 1, 2]
 print(blackf(T))
