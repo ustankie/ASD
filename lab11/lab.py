@@ -10,7 +10,7 @@
 #   F[0,_]=0
 #   F[i,True]=F[i-1,False] + C[i]
 #   F[i,False]=max(F[i-1,True],F[i-1,False])
-#3) głodna żaba - Pewna żaba skacze po osi liczbowej. Ma się dostać z zera do n − 1, skacząc
+#3)v głodna żaba - Pewna żaba skacze po osi liczbowej. Ma się dostać z zera do n − 1, skacząc
 #   wyłącznie w kierunku większych liczb. Skok z liczby i do liczby j (j > i) kosztuje ją j − i jednostek energii, a
 #   jej energia nigdy nie może spaść poniżej zera. Na początku żaba ma 0 jednostek energii, ale na szczęście na
 #   niektórych liczbach—także na zerze—leżą przekąski o określonej wartości energetycznej (wartość przekąki
