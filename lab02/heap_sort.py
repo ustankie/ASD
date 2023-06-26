@@ -33,5 +33,7 @@ def heap_sort(T):
         
 
 T=[0,34,5,4,2,4,54,5,65,3,46,67]
-heap_sort(T)
-print(T)
+A=[0,24,5,-1,3,43]
+
+heap_sort(A)
+print(A)
