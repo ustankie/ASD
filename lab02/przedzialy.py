@@ -194,9 +194,11 @@ def przedzialy3(T):
     R=T[:]
     L=T[:]
 
+
     heap_sort(R,1)
     heap_sort(L,2)
-
+    print(L)
+    print(R)
     maximum=0
     biggest=0
     for i in range(n):
