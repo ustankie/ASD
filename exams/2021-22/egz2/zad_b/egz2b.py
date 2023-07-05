@@ -1,20 +1,26 @@
-#O(n^2)
+#O(n)
 from egz2btesty import runtests
 from collections import deque
+from queue import PriorityQueue
 def magic( C ):
     n=len(C)
     d=[-1 for _ in range(n)]
+    vis=[False for _ in range(n)]
     d[0]=0
-    Q=deque()
-    Q.append(0)
-    while len(Q)>0:
-        i=Q.popleft()
-        for j in range(1,4):
-            if C[i][j][1]>=0:
-                a=C[i][0]-C[i][j][0]
-                if a<=10 and d[i]+a>d[C[i][j][1]]:
-                    d[C[i][j][1]]=d[i]+a
-                    Q.append(C[i][j][1])
+    Q=PriorityQueue()
+    Q.put((0))
+    while not Q.empty():
+        
+        i=Q.get()
+        # print(i)
+        if not vis[i]:
+            vis[i]=True
+            for j in range(1,4):
+                if C[i][j][1]>=0:
+                    a=C[i][0]-C[i][j][0]
+                    if a<=10 and d[i]+a>d[C[i][j][1]]:
+                        d[C[i][j][1]]=d[i]+a
+                        Q.put(C[i][j][1])
     
     return d[n-1]
 
