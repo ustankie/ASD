@@ -53,7 +53,7 @@ def select(T,i,j,k):
     
 T=[1,24,5,41,0,4,90,67,90,78,57,3,0,1]
 
-print(select(T,0,len(T)-1,0))
+print(select(T,0,len(T)-1,4))
 selection_sort(T)
 print(T)
 

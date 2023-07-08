@@ -13,7 +13,7 @@ def maze(L):
     F=[[[-1,-1,-1] for _ in range(n)]for _ in range(n)]
     F[0][0][0]=F[0][0][1]=F[0][0][2]=0
     for i in range(1,n):
-        if L[i][0]!="#" and F[i-1][0][0]>=0:
+        if L[i][0]=="#" and F[i-1][0][0]>=0:
             F[i][0][0]=F[i-1][0][0]+1
 
     for j in range(1,n):

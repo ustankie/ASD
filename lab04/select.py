@@ -20,4 +20,6 @@ def select(T,p,r,k):
             return select(T,p,q-1,k)
 
 T=[1,2,53,2,0,6,7,22,54,67]
-print(select(T,0,len(T)-1,8))
+print(select(T,0,len(T)-1,4))
+T.sort()
+print(T)

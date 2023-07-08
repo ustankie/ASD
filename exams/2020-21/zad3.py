@@ -1,66 +1,42 @@
 from zad3testy import runtests
-from queue import PriorityQueue
-def transform(G):
-    n=len(G)
-    G1=[[]for _ in range(n)]
+def find_max(A):
+    n=len(A)
+    max_ind=0
     for i in range(n):
-        for j in range(n):
-            if G[i][j]:
-                G1[i].append((j,G[i][j]))
-    return G1
-
-def relax(par,d,u,v,c,m):
-    if m==1:
-        if d[v][1]>d[u][0]+c:
-            d[v][1]=d[u][0]+c
-            par[v][1]=u
-            return True
-    else:
-        a=min(d[u])
-        if d[v][0]>a+c:
-            d[v][0]=a+c
-            par[v][0]=u
-            return True
-    return False
-
-def jumper(G,s,t):
-    n=len(G)
-    G=transform(G)
-    #print(G)
-
-    d=[[float('inf'),float('inf')] for _ in range(n)]
-    par=[[None,None] for _ in range(n)]
-
-    Q=PriorityQueue()
-    Q.put((0,None,None,s,1))
-    d[s]=[0,0]
+        max_ind=max(max_ind,A[i][1])
+    return max_ind
+def compare(A,B):
     
-    while not Q.empty():
-        c,c_prev,u_prev,u,m=Q.get()
+def kintersect(A, k):
+    n=len(A)
+    m=find_max(A)
+    #print(m)
+    P=[[0,[]] for _ in range(m+1)]
+    for i in range(n):
+        for j in range(A[i][0],A[i][1]):
+            P[j][0]+=1
+            P[j][1].append(i)
+    i=0
+    max_cnt=0
+    max_ind=0
+    while i<(m+1):
+        beginning=i
+        count=1
+        i+=1
+        while i<(m+1) and P[i][0]>=k:
+            i+=1
+            count+=1
+        if count>max_cnt:
+            max_cnt=count
+            max_ind=beginning
+        i+=1
+    return P[max_ind][1]
 
-        if d[u][m]<=c:
-            for v,k in G[u]:
-                if relax(par,d,u,v,k,0):
-                    Q.put((d[v][0],k,u,v,0))
-
-                if not m and u_prev!=v and relax(par,d,u_prev,v,max(c_prev,k),1):
-                    Q.put((d[v][1],k,u_prev,v,1))
     
-    return min(d[t])#,path[::-1]
 
-                    
 
-runtests(jumper)
 
-G=[[0, 2, 0],
-    [2, 0, 3],
-    [0, 3, 0]]
-G=[[0, 1, 200, 200, 200, 200],
-              [1, 0, 2, 200, 200, 200],
-              [200, 2, 0, 40, 200, 200],
-              [200, 200, 40, 0, 40, 200],
-              [200, 200, 200, 40, 0, 117],
-              [200, 200, 200, 200, 117, 0]]
-s=0
-t=4
-print(jumper(G,s,t))
+runtests(kintersect)
+A=[(0, 4), (1, 10), (6, 7), (2, 8)]
+k=3
+print(kintersect(A,k))

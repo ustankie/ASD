@@ -106,7 +106,7 @@ def binsearch(G,el):
 def binworker(M):
     p=len(M)
     G=convert2(M)
-    #print(*G,sep="\n")
+    print(*G,sep="\n")
     n=len(G)
     max_flow=0
     s=n-2
@@ -136,13 +136,14 @@ def binworker(M):
     
 
 # zmien all_tests na True zeby uruchomic wszystkie testy
-runtests( binworker, all_tests = False )
+#runtests( binworker, all_tests = False )
 
 M = [ [ 0, 1, 3], # 0
 [ 2, 4], # 1
 [ 0, 2], # 2
 [ 3 ], # 3
 [ 3, 2] ] # 4
+M1=[[0, 1], [0, 1], [0]]
 M2=[[16, 5, 6], [9, 12], [1, 2, 11, 16, 19], [2, 9, 10, 11, 12, 13], [3, 6, 9, 12, 13, 16], [2, 4, 7, 15, 17], [1, 2, 5, 7, 12], [8, 9, 11, 12, 18], 
     [3, 5, 6, 8, 18], [1, 10, 4, 7], [1, 10, 7], [1, 18, 15], [0, 1, 6, 9, 15], [0, 3, 4, 14, 15, 17], [16, 6, 7], [2, 19, 12, 13], [0, 1, 11], [0, 7, 11, 17, 18], [8, 6, 15], [11, 4, 14]]
-print(binworker(M2))
+print(binworker(M1))
