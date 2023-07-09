@@ -2,13 +2,13 @@
 #   a) minimalna liczba tankowań - bierzemy ostatnia napotkana stacje i na niej tankujemy
 #   b)minimalizujemy koszt tankowań - jeśli w zasięgu lepsza stacja, to tankujemy tyle, ile trzeba, by do niej dojechać, wpp do pełna
 #   c)j.w.,ale tankujemy zawsze do pełna - dynamik, a nie zachłanny f(x,i)-koszt jazdy z 0 do i mając x paliwa
-#2) przedziały jednostkowe - sortujemy pkty rosnąco zaczynamy na pierwszym do pokrycia punkcie jednostkowym, kolejny zaczynamy od pierwszego poza przedziałem
-#3) zadania z terminami - zadanie,termin,zysk, każde zadanie zajmuje jednostkę czasu - chcemy znaleźć podzbiór zadań, które można wykonać w terminie i max zysk
+#2)v przedziały jednostkowe - sortujemy pkty rosnąco zaczynamy na pierwszym do pokrycia punkcie jednostkowym, kolejny zaczynamy od pierwszego poza przedziałem
+#3)v zadania z terminami - zadanie,termin,zysk, każde zadanie zajmuje jednostkę czasu - chcemy znaleźć podzbiór zadań, które można wykonać w terminie i max zysk
 #   - bierzemy zadania o największym zysku idąc od najpóźniejszych deadlinów z tych które można jeszcze oddać
 #4) jak najmniej monet wydać w reszcie - dynamik: f(N,coins)=min(N-c,coins)+1,c należy do listy nominałów
 #                                                 f(0,_)=0
 #   czasem można zachłannie -> np w pl systemie monetarnym -> nominały muszą rosnąć szybciej niż wykładniczo - kolejny jest co najmniej 2 razy większy
-#5)ładowanie przyczepy - posortować i dodawać od największych
+#5)vładowanie przyczepy - posortować i dodawać od największych
 
 #1) a)
 def tank(L,S):
