@@ -28,6 +28,8 @@ def opt_sum(A):
     
     rec(0,n-1)
    
+    print(*F,sep="\n")
+    print()
     return F[0][n-1]
             
 
