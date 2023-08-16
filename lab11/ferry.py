@@ -85,6 +85,6 @@ cars = [3.16, 7.23, 4.98, 2.88, 6.34, 4.39, 2.63, 4.88]
 # L=10
 # cars=[3,5,6,6]
 start = time()
-print(ferry2(cars, L))
+print(ferry(cars, L))
 end = time()
 print(end-start)
