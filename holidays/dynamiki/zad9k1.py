@@ -21,11 +21,7 @@ def get_solution(F,l1,l2,A,a):
     return right
 def prom(A,l,r):
     n=len(A)
-    #print(l,r,A)
-    # l=int(l*100+0.5)
-    # r=int(r*100+0.5)
-    # for i in range(n):
-    #     A[i]=int(A[i]*100+.5)
+
     S=[0 for i in range(n+2)]
     F=[[[None,None] for _ in range(r+1)]for _ in range(n+1)]
     S[0]=A[0]
