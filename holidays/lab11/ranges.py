@@ -17,18 +17,25 @@ def k_ranges(A,k):
     n=len(A)
     m=min_max(A)
     F=[[0 for _ in range(k+1)]for _ in range(m+1)]
-    A.sort(key=lambda x: x[1])
+    A.sort()
     print(A)
     for i in range(n):
         for j in range(k+1):
-            F[A[i][1]][j]=max(F[A[i][1]][j],F[A[i][0]][j-1]+(A[i][1]-A[i][0]),F[A[i][1]][j-1])
+            F[A[i][0]][j]=max(F[A[i][0]][j],F[A[i][1]][j-1]+(A[i][1]-A[i][0]))
         print(*F,sep="\n")
         print()
     return F[m][k]
 
 A = [[4, 5], [2, 4], [1, 3], [3, 6], [5, 7], [1, 5], [-5, 2]]
-A = [[4.1, 5.2], [2.15, 4.4], [1.5, 3.2], [3.2, 6.83], [5.2, 7.1], [1.2, 5.2], [-5.75, 2.15]]
-for i in range(len(A)):
-    A[i][0]=int(A[i][0]*100+.5)
-    A[i][1]=int(A[i][1]*100+.5)
+A=[[1,7],[1,2],[2,4],[4,5],[5,9]]
+# A = [[4.1, 5.2], [2.15, 4.4], [1.5, 3.2], [3.2, 6.83], [5.2, 7.1], [1.2, 5.2], [-5.75, 2.15]]
+# for i in range(len(A)):
+#     if A[i][0]>0:
+#         A[i][0] = int(A[i][0]*100+0.5)
+#     else:
+#         A[i][0] = int(A[i][0]*100-0.5)
+#     if A[i][1]>0:
+#         A[i][1] = int(A[i][1]*100+0.5)
+#     else:
+#         A[i][1] = int(A[i][1]*100-0.5)  
 print(k_ranges(A,2))

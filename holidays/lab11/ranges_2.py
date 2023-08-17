@@ -109,6 +109,61 @@ def intervals_cost(A, inter):
     #print(*F,sep="\n")
     return F[0][b-a]
 
+#zad_c
+
+def min_max2(A):
+    n=len(A)
+    mini=float('inf')
+    maxi=-float('inf')
+
+    for i in range(n):
+        mini=min(mini,min(A[i]))
+        maxi=max(maxi,max(A[i]))
+    if mini<0:
+        for i in range(n):
+            A[i][0]-=mini
+            A[i][1]-=mini
+        maxi-=mini
+        mini=0
+    
+
+    return mini,maxi,maxi-mini+1
+def k_intervals(A):
+    A.sort()
+    n=len(A)
+
+    a,b,c=min_max2(A)
+    print(a,b,c)
+
+    # print(A,inter)
+    # print(A_bin)
+
+
+    #print(c)
+    F=[[None for _ in range(c)]for _ in range(c)]
+
+    def merge(i,j):
+        if F[i][j]!=None:
+            return F[i][j]
+        
+        q=binsearch(A,[i,j])
+        if q<n and A[q]==[i,j]:
+            F[i][j]=A[q][1]-A[q][0]
+            return F[i][j]
+        F[i][j]=-float('inf')
+        for k in range(i+1,j):
+            o=merge(i,k)
+            p=merge(k,j)
+            # if [i,j]==[a,b]:
+            #     print(i,k,j,o,p)
+
+            F[i][j]=max(F[i][j],o+p)
+        return F[i][j]
+    merge(a,b)
+    #print(*F,sep="\n")
+    return F[0][b-a]
+
+
 A = [[4, 5], [2, 4], [1, 3], [3, 6], [5, 7], [1, 5], [-5, 2]]
 A = [[4.1, 5.2], [2.15, 4.4], [1.5, 3.2], [3.2, 6.83], [5.2, 7.1], [1.2, 5.2], [-5.75, 2.15]]
 for i in range(len(A)):
@@ -147,3 +202,19 @@ for i in range(len(A)):
 print(A)
 print(intervals_cost(A, [15, 110]))
 print(intervals_cost(A, [-52, 110]))
+
+
+
+A = [[4.1, 5.2], [2.15, 4.4], [1.5, 3.2], [3.2, 6.83], [5.2, 7.1], [1.2, 5.2], [-5.75, 2.15]]
+for i in range(len(A)):
+    if A[i][0]>0:
+        A[i][0] = int(A[i][0]*100+0.5)
+    else:
+        A[i][0] = int(A[i][0]*100-0.5)
+    if A[i][1]>0:
+        A[i][1] = int(A[i][1]*100+0.5)
+    else:
+        A[i][1] = int(A[i][1]*100-0.5)       
+print(A)                                                                           
+print(k_intervals(A))
+
