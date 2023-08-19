@@ -14,5 +14,30 @@ def bipartite(G):
             elif d[v]%2==d[u]%2:
                 return False
     return True
-G=[[1,3,5],[0,2,4],[1,3,5],[0,2,4,5],[1,3,5],[4,2,0,3]]
-print(bipartite(G))
+
+def bipartite2(G):
+    n = len(G)
+    vis = [None for _ in range(n)]
+
+    def DFS(G, u):
+        for v in G[u]:
+            if vis[v]==None:
+                vis[v] = 1-vis[u]
+                a=DFS(G, v)
+                if not a:
+                    return False
+            elif vis[v]==vis[u]:
+                return False
+        return True
+
+    for u in range(n):
+        if vis[u]==None:
+            vis[u]=0
+            if not DFS(G, u):
+                return False
+
+    return True
+
+G=[[1,3,5],[0,2,4],[1,3,5],[0,2,4],[1,3,5],[4,3]]
+
+print(bipartite2(G))
