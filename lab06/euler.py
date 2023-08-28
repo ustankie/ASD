@@ -3,7 +3,7 @@ def euler(G):
         #last[u]+=1
         # print(G[u])
         # print(last[u])
-        print(u)
+        #print(u)
         for i in range(last[u],len(G[u])):
             v=G[u][i]
             last[u]+=1
@@ -26,7 +26,7 @@ def euler(G):
     count=0
     for u in range(n):
         if last[u]<len(G[u]):
-            print(G)
+            #print(G)
             DFS(G,u)
             count+=1
     #print(count)
