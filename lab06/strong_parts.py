@@ -24,6 +24,7 @@ def strong(G):
 
     G1=[[] for _ in range(n)]
     vis=[False for _ in range(n)]
+    print(time)
 
     for u in range(n):
         for v in G[u]:
