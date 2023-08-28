@@ -16,6 +16,7 @@ def topsort(G):
         if not vis[u]:
             vis[u]=True
             DFS(G,u)
+    
     return T[::-1]
 
 def find_pos(T,s):
@@ -34,6 +35,7 @@ def relax(d,par,u,v,c):
 def DAG(G,s):
     n=len(G)
     T=topsort(G)
+    print(T)
     ind=find_pos(T,s)
 
     d=[inf for _ in range(n)]
@@ -50,6 +52,7 @@ def DAG(G,s):
 
 
     
+
 
 G=[[(1,1),(2,2)],[(2,3),(4,-5)],[],[],[(3,-1),(6,-8)],[(4,0)],[]]
 G2=[[(1,-5)],[],[(0,-1),(3,4)],[(1,2),(4,-3)],[(5,7)],[],[(4,-2),(0,1)]]
