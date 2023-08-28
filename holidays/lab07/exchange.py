@@ -6,32 +6,36 @@ def relax(par,d,u,v,c):
         return True
     return False
 
-def bf(K,s):
-    n=len(K)
+def bf(G,s):
+    n=len(G)
+    
     d=[float('inf') for _ in range(n)]
     par=[None for _ in range(n)]
-    for u in range(n):
-        for v in range(n):
-            if K[u][v]>0:
-                K[u][v]=log10(K[u][v])
 
-    print(*K,sep="\n")
-    print()
     d[s]=0
-    for t in range(n):
+    
+    for i in range(n):
         b=False
         for u in range(n):
             for v in range(n):
-                if K[u][v]!=0:
-                    b=b or relax(par,d,u,v,K[u][v])
-                    #print(d,par,b)
+                if G[u][v]!=0:
+                    b=relax(par,d,u,v,G[u][v]) or b
         if not b:
             return False
+    #if b:
     return True
-def currency(K):
-    n=len(K)
+    #return False
+
+def exchange(G):
+    n=len(G)
     for i in range(n):
-        if bf(K,i):
+        for j in range(n):
+            if G[i][j]>0:
+                G[i][j]=log10(G[i][j])
+    print(*G,sep="\n")
+    
+    for i in range(n):
+        if bf(G,i):
             return i
     return None
 
@@ -58,4 +62,4 @@ G2=[
     [0.5 , 0 ,1.5],
     [0.25, 1 ,0  ]
     ]
-print(currency(G))
+print(exchange(G2))
