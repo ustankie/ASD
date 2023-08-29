@@ -39,7 +39,7 @@ def plan(T):
     m=len(T[0])
     B=[0 for _ in range(m)]
     F=[0 for _ in range(m)]
-
+    print(S)
     B[0]=S[0]
     F[0]=1
     S[0]=0

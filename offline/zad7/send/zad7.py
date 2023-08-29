@@ -26,7 +26,7 @@ def maze(L):
                     F[i][j][0]=max(F[i-1][j][0],F[i-1][j][2])
                     if F[i][j][0]>=0:
                         F[i][j][0]+=1
-            if  i>0 and i<n//2 and L[n-i][j]!="#" :
+            if  j>0 and i<n//2 and L[n-i][j]!="#" :
                 F[n-i][j][2]=max(F[n-i][j-1])
                 if F[n-i][j][2]>=0:
                     F[n-i][j][2]+=1
