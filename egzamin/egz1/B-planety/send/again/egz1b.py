@@ -16,7 +16,7 @@ def planets(D, C, T, E):
         for j in range(E+1):
             if j>0:
                 F[i][j]=min(F[i][j],F[i][j-1]+C[i])
-            if j==0 and T[i][0]>i:
+            if j==0:
                 F[T[i][0]][0]=min(F[T[i][0]][0],F[i][0]+T[i][1])
             if distance<=j:
                 F[i+1][j-distance]=min(F[i+1][j-distance],F[i][j])
