@@ -28,7 +28,7 @@ def snow( I,T ):
     for i in range(1,2*n):
         if R[i]!=R[i-1]:
             A.append(R[i])
-
+    
     n=len(A)
     _n=1<<(1+int(log2(n-1)))
     print(n,_n)
@@ -66,7 +66,7 @@ def snow( I,T ):
     for i in range(n):
         maxi=max(maxi,query(i))
     return maxi
-runtests( snow, all_tests = True )
+# runtests( snow, all_tests = True )
 T = 1000
 I = [(851, 856), (206, 745), 
      (375, 852), (58, 749), (936, 971), (161, 382), (479, 924), (29, 410), 
