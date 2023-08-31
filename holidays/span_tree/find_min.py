@@ -42,6 +42,7 @@ def find_min(T,rang):
             b//=2
             
         return mini
+    print(ST)
     
     mini1=range_min(rang[0],rang[1])
     update(5,-1)
