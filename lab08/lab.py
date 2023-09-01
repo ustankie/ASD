@@ -5,7 +5,7 @@
 #   nie wpisujemy odleglosci 0 dla pierwszego wierzchołka, algorytm Floyda-Warshalla v
 #4) v czas budowy autostrad -> między dowolną parą miast ma się dać jechać, ale różnica między czasem budowy najwcześniejszej i najpóźniejszej ma być najmniejszy -
 # - sortujemy krawedzie po dlugosci, próbujemy każdego ciągu krawędzi, DFS z każdego wierzchołka O(E^3)
-# - sortujemy krawędzie, znajdujemy MST od każdego vi w kolejności i sprawdzamy czy działa (znajdujemy dla danego vi najmniejsze spojne drzewo find/union) O(E^2log*E) v
+# - sortujemy krawędzie, znajdujemy MST od każdego vi w kolejności i    sprawdzamy czy działa (znajdujemy dla danego vi najmniejsze spojne drzewo find/union) O(E^2log*E) v
 # - O(E^2): budujemy MST, przesuwamy się oknem -> DFS czy spójne, jeśli tak -> rozw, nie -> szukamy polaczenia miedzy dwoma drzewami 
 #5) v Przewodnik turystyczny - s,t, autobusy, przepustowość krawędzi, chcemy znaleźć trasę z s do t o przepustowości max (bez DFS/BFS) - odwrotny kruskal v
 #6) v Transport atomowy - s,t, graf ważony - odleglosc miedzy wierzcholkami to najkrotsza trasa miedzy nimi, z s rusza 1 do t, z t 2 do s, robią kroki na zmiane o jedno pole, v
