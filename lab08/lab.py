@@ -1,7 +1,8 @@
 #1) v implementacja: domknięcie przechodnie grafu (rep. macierzowa) - jeśli istnieje ścieżka z x do y, to istnieje krwędź z x do y -
 # - Floyd Warshall v
 #2) v Implementacja: Kruskal (sort,find/union dane) v
-#3) v G=(V,E) - graf skierowany, ważony -> obliczyć wagę cyklu o min wadze (jeśli nie ma cyklu, zwraca inf) - nie wpisujemy odleglosci 0 dla pierwszego wierzchołka, algorytm Floyda-Warshalla v
+#3) v G=(V,E) - graf skierowany, ważony -> obliczyć wagę cyklu o min wadze (jeśli nie ma cyklu, zwraca inf) - 
+#   nie wpisujemy odleglosci 0 dla pierwszego wierzchołka, algorytm Floyda-Warshalla v
 #4) v czas budowy autostrad -> między dowolną parą miast ma się dać jechać, ale różnica między czasem budowy najwcześniejszej i najpóźniejszej ma być najmniejszy -
 # - sortujemy krawedzie po dlugosci, próbujemy każdego ciągu krawędzi, DFS z każdego wierzchołka O(E^3)
 # - sortujemy krawędzie, znajdujemy MST od każdego vi w kolejności i sprawdzamy czy działa (znajdujemy dla danego vi najmniejsze spojne drzewo find/union) O(E^2log*E) v
