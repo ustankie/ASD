@@ -1,6 +1,10 @@
 from time import time
 def ferry(A,l):
     n=len(A)
+    l=int(l*100+0.5)
+    r=int(r*100+0.5)
+    for i in range(n):
+        A[i]=int(A[i]*100+.5)
     S=[0 for i in range(n)]
     P=[0 for i in range(n)]
     S[0]=A[0]

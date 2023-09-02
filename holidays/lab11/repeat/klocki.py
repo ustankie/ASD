@@ -1,16 +1,14 @@
-
-def klocki(K):
-    n = len(K)
+def bricks(A):
+    n=len(A)
     F=[0 for _ in range(n)]
     F[0]=1
 
     for i in range(1,n):
         for j in range(i):
-            if K[j][0]<=K[i][0] and K[j][1]>=K[i][1]:
+            if A[j][0]<=A[i][0] and A[i][1]<=A[j][1]:
                 F[i]=max(F[i],F[j]+1)
 
-        
-    return n-max(F)
+    return n-F[n-1]
 
 def binsearch(A,x,p):
     n=len(A)
@@ -33,26 +31,24 @@ def binsearch(A,x,p):
                 j=q-1
     return i
 
-def lis(K,p):
-    n=len(K)
-    F=[]
-
+def lis(A,b):
+    n=len(A)
+    R=[]
     for i in range(n):
-        
-        a=binsearch(F,K[i][p],p)
-        if a==len(F):
-            F.append(K[i])
+        a=binsearch(R,A[i][b],b)
+        if a==len(R):
+            R.append(A[i])
         else:
-            F[a]=K[i]
-    return F
+            R[a]=A[i]
+    return R
 
-def klocki2(K):
-    L=lis(K,0)
-    R=lis(L,1)
+def bricks2(A):
+    R=lis(A,0)
+    R=lis(R,1)
+    return len(A)-len(R)-1,R
 
-    return len(K)-len(R)-1,R
 
-A = [
+ranges = [
     [0, 5],
     [1, 4],
     [-3, 7],
@@ -61,5 +57,5 @@ A = [
     [4, 6],
     [2, 3]
 ]
-#A=[(0, 10), (1, 10), (2, 6), (6, 7), (11, 20), (11, 19), (12, 18), (13, 19), (14, 20)]
-print(klocki2(A))
+ranges = [(0, 10), (1, 10), (2, 6), (6, 7), (11, 20), (11, 19), (12, 18), (13, 19), (14, 20)]
+print(bricks2(ranges))
