@@ -19,6 +19,7 @@ def get_solution(F,l1,l2,A,a):
     if left[-1]==a:
         return left
     return right
+
 def prom(A,l,r):
     n=len(A)
 

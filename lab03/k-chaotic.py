@@ -26,7 +26,7 @@ def k_chaotic(T,p,r,k):
     if k<(r-p):
         q=(r-p)//2+p
         select(T,p,r,q)
-        k_chaotic(T,p,q-q,k)
+        k_chaotic(T,p,q-1,k)
         k_chaotic(T,q+1,r,k)
         
     

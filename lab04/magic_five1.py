@@ -79,7 +79,10 @@ def select(T,p,r,k):
     
 
 T=[1,24,5,41,0,4,90,67,90,78,57,3,0,1]
+n=len(T)
+for i in range(n):
+    T[i]=(T[i],i)
 
-print(select(T,3,len(T)-1,4))
+print(select(T,0,len(T)-1,5))
 quick_sort(T,0,len(T)-1)
 print(T)
