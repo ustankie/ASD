@@ -16,30 +16,32 @@ def dywany ( n ):
         else:
             for j in range(i//2):
                 if F[i]>F[j]+F[i-j]:
+                    F[i]=F[j]+F[i-j]
                     par[i]=[j,i-j]
-                F[i]=min(F[i],F[j]+F[i-j])
-    print(F)
+    # print(F)
     R=[]
-    def get_solution(i):
+    def solution(i):
         if i==None:
-            return
+            return 
         if par[i][0]==i:
-            R.append(isqrt(par[i][0]))
+            R.append(isqrt(i))
         else:
-            get_solution(par[i][0])
-
+            solution(par[i][0])
+        
         if par[i][1]==i:
-            R.append(isqrt(par[i][1]))
+            R.append(isqrt(i))
         else:
-            get_solution(par[i][1])
+            solution(par[i][1])
     
-    get_solution(n)
+    solution(n)
     return R
 
+        
 
 
 
-# runtests( dywany )
+
+runtests( dywany )
 N=10
 print(dywany(N))
 
