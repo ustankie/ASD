@@ -7,7 +7,8 @@ Unfortunately there is a bit of chaos, although I tried to organize the files in
 
 - directory 'zadanka' includes instructions to problems solved during exercises
 - each directory 'lab01' etc. includes
-  - a file lab.py which contains problems and short descriptions of the solutions which were presented by the academics during exercises,
+  - a file lab.py which contains problems and short descriptions of the solutions which were presented by the academics during exercises
+    - be careful: the directory 'zadanka' is ordered a bit differently than directories 'lab(...)' - dynamic programming is swapped with graph algorithms
   - solved problems from the current topic
 - there are also directories 'exams' which include exam problems by year
 - and the most chaotically placed excercises from colloqiums
