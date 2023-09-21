@@ -1,5 +1,5 @@
 # ASD
-This repository includes the majority of exercises for first year of Computer Science studies (AGH, WIEiT), subject 'Algorithms and Data Structures'.
+This repository includes the majority of exercises for first year of Computer Science studies (AGH, WIEiT), course 'Algorithms and Data Structures'.
 
 Not all of the solutions are optimal (I was learning while solving the exercises), some are solved multiple times (sometimes the same way, sometimes I tried to find a new solution).
 
